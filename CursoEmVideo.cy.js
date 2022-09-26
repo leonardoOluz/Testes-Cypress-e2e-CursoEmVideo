@@ -48,4 +48,13 @@ describe('Verificando itens de abertura da pagina inicial',()=>{
         cy.contains('h3','Segurança da Informação: Módulo 01 [20 HORAS]').should('be.visible');
         cy.contains('h3','Curso de Endereçamento IPv4 [20 HORAS]').should('be.visible');        
     })
+    it('Verificar itens do Sobre',()=>{
+        cy.contains('span','Sobre').click();
+        cy.contains('a','Seja um apoiador do Curso em Vídeo, remova os anúncios do site, tenha créditos para emissão de certificados e outros benefícios').should('be.visible');
+        cy.contains('div','Lançado em 2013, o projeto de ensinar tecnologia à distância foi ganhando forma e hoje já conta com milhares de alunos inscritos e uma grande quantidade de material gratuito.').should('be.visible');
+        cy.contains('div','O professor carioca Gustavo Guanabara sempre buscou criar aulas diferentes dentro da sua sala. Quando descobriu que poderia dar aulas para milhares de pessoas pela internet, criou seu primeiro curso de PHP em 2005. Desde aquela época, já teve mais de 8 milhões de downloads e colaborou para a formação de muitos programadores iniciantes.').should('be.visible');
+        cy.contains('div','Em 2013, com o apoio principal da Hostnet, Guanabara iniciou seu projeto mais ambicioso: ensinar tecnologia através de um site que disponibilizasse cursos completos em vídeo, com novas aulas lançadas semanalmente. Ainda em 2013, foi lançado o Curso em Vídeo de HTML5 e no início de 2014, iniciou o Curso em Vídeo de Algoritmo. Ambos 100% gratuitos.').should('be.visible');
+        cy.contains('div','Não encontrou o curso que procura? Amplie ainda mais seus conhecimentos com o Estudonauta!').should('be.visible');
+    })
+    
 })
