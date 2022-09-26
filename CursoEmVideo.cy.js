@@ -64,7 +64,13 @@ describe('Verificando itens de abertura da pagina inicial',()=>{
         cy.contains('span','Apoiar Agora!').should('be.visible');
         cy.contains('a','Apoiar Agora!').click();
     })
-    
+    it('Verificar itens do Login',()=>{
+        cy.contains('span','Login').click();
+        cy.contains('span','Entrar').should('be.visible');
+        cy.contains('a','Cadastrar').should('be.visible');
+        cy.contains('a','Esqueceu a senha?').should('be.visible');
+        
+    })
 
 
 
