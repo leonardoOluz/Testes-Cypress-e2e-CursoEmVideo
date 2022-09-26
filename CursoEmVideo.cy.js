@@ -61,12 +61,10 @@ describe('Verificando itens de abertura da pagina inicial',()=>{
         cy.contains('span','Quero ser um Apoiador!').should('be.visible');
         cy.contains('div','O CursoemVideo surgiu em 2012 quando o professor Gustavo Guanabara decidiu transformar algumas de suas aulas em um formato de vídeo com o objetivo de ajudar seus alunos em sala de aula. Em poucos meses, o formato se mostrou bem popular e começou a chegar em outras pessoas pelo mundo.').should('be.visible');
         cy.contains('div','Atualmente, são mais de 13 cursos grátis como Construção de Sites com HTML5, Lógica de Programação, PHP, Java, Banco de Dados, Programação Orientada a Objetos, Word, Excel, Marketing Digital, Python e Hardware. E tudo com um único objetivo: democratizar a Informática e provar que aprender programação ou qualquer outra disciplina técnica não é tão difícil quanto as pessoas pensam.').should('be.visible');
-        cy.contains('button','Reproduzir').click();
         cy.contains('span','Apoiar Agora!').should('be.visible');
         cy.contains('a','Apoiar Agora!').click();
-        
-
     })
+    
 
 
 
