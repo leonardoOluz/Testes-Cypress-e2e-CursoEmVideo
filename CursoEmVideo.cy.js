@@ -66,10 +66,26 @@ describe('Verificando itens de abertura da pagina inicial',()=>{
     })
     it('Verificar itens do Login',()=>{
         cy.contains('span','Login').click();
+        cy.contains('button','Entrar').should('be.visible');
         cy.contains('span','Entrar').should('be.visible');
+        cy.contains('span','Lembrar-me').should('be.visible');
         cy.contains('a','Cadastrar').should('be.visible');
         cy.contains('a','Esqueceu a senha?').should('be.visible');
         
+    })
+
+    it('Verificar itens do Cadastro',()=>{
+        cy.contains('span','Cadastre-se').click();
+        cy.contains('label','Nome').should('be.visible');
+        cy.contains('div','Campo obrigatório.').should('be.visible');
+        cy.contains('label','Sobrenome').should('be.visible');
+        cy.contains('div','This field is required.').should('be.visible');
+        cy.contains('label','E-mail').should('be.visible');
+        cy.contains('div','Preencha com e-mail válido.').should('be.visible');
+        cy.contains('label','Senha').should('be.visible');
+        cy.contains('label','Confirmar Senha').should('be.visible');
+        cy.contains('button','Registrar Gratuitamente').should('be.visible');
+       
     })
 
 
