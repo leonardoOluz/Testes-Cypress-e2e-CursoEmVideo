@@ -86,12 +86,19 @@ describe('Verificando itens de abertura da pagina inicial',()=>{
         cy.contains('button','Registrar Gratuitamente').should('be.visible');
        
     })
-    it.only ('Verificar itens Validação de Certificado',()=>{
+    it('Verificar itens Validação de Certificado',()=>{
         cy.contains('span','Validação de Certificado').click();
         cy.contains('p','Digite o código do certificado no formulário abaixo').should('be.visible');
         cy.contains('p','para verificar sua validade').should('be.visible');
         cy.contains('label','Código do Certificado').should('be.visible');
         cy.contains('input','Validar').should('be.visible');
     })
-    
+    it.only('Verificando itens Hall da Fama',()=>{
+        cy.contains('span','Hall da Fama').click();
+        cy.contains('th','Nome').should('be.visible');
+        cy.contains('th','Apoiador Desde').should('be.visible');
+        cy.contains('th','Redes Sociais').should('be.visible');
+        cy.contains('th','Perfil do Apoiador').should('be.visible');
+    })
+
 })
