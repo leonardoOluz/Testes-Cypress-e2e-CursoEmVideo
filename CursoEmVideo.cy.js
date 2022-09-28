@@ -73,7 +73,6 @@ describe('Verificando itens de abertura da pagina inicial',()=>{
         cy.contains('a','Esqueceu a senha?').should('be.visible');
         
     })
-
     it('Verificar itens do Cadastro',()=>{
         cy.contains('span','Cadastre-se').click();
         cy.contains('label','Nome').should('be.visible');
@@ -87,7 +86,12 @@ describe('Verificando itens de abertura da pagina inicial',()=>{
         cy.contains('button','Registrar Gratuitamente').should('be.visible');
        
     })
-
-
-
+    it.only ('Verificar itens Validação de Certificado',()=>{
+        cy.contains('span','Validação de Certificado').click();
+        cy.contains('p','Digite o código do certificado no formulário abaixo').should('be.visible');
+        cy.contains('p','para verificar sua validade').should('be.visible');
+        cy.contains('label','Código do Certificado').should('be.visible');
+        cy.contains('input','Validar').should('be.visible');
+    })
+    
 })
