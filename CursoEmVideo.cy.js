@@ -93,7 +93,7 @@ describe('Verificando itens de abertura da pagina inicial',()=>{
         cy.contains('label','Código do Certificado').should('be.visible');
         cy.contains('input','Validar').should('be.visible');
     })
-    it.only('Verificando itens Hall da Fama',()=>{
+    it('Verificando itens Hall da Fama',()=>{
         cy.contains('span','Hall da Fama').click();
         cy.contains('th','Nome').should('be.visible');
         cy.contains('th','Apoiador Desde').should('be.visible');
