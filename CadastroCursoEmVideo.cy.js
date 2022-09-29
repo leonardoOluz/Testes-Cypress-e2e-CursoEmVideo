@@ -27,6 +27,17 @@ describe('Validação de cadastro',()=>{
         cy.contains('span','Your password should be at least 8 characters long.').should('be.visible');
     
     })
-
+    const usuarios = require('../../fixtures/usuarios.json'); // constante p/ guardar a biblioteca json de usuarios.
+    usuarios.forEach(usuario =>{ // função forEach para um laço de repetição da constante usuarios
+        it.only(`Registrar usuario ${usuario.NomeUsuario}`,()=>{
+            cy.contains('a','Cadastre-se').click();
+            cy.get('input[name="first_name"]').type(usuario.first_name);
+            cy.get('input[name="last_name"]').type(usuario.last_name);
+            cy.get('input[name="user_email"]').type(usuario.user_email);
+            cy.get('input[name="user_pass"]').type(usuario.user_pass);
+            cy.get('input[name="confirm_user_pass"]').type(usuario.confirm_user_pass);
+            cy.contains('button','Registrar Gratuitamente').click();
+        })
+    })
 
 })
