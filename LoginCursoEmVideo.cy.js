@@ -7,9 +7,9 @@ describe('Validação de Login',()=>{
        cy.on ('window:alert',(str)=>{
         expect(str).to.equal('Error: The Username you have entered is Invalid')
        })
-       
+
     }) 
-    it.only('Verificando login valido',()=>{
+    it('Verificando login valido',()=>{
         cy.login('leonardoluz10@hotmail.com','HBalcasa18@');
         cy.contains('a','Meu Painel').should('be.visible');
     }) 
