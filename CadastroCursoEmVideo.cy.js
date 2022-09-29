@@ -29,7 +29,7 @@ describe('Validação de cadastro',()=>{
     })
     const usuarios = require('../../fixtures/usuarios.json'); // constante p/ guardar a biblioteca json de usuarios.
     usuarios.forEach(usuario =>{ // função forEach para um laço de repetição da constante usuarios
-        it.only(`Registrar usuario ${usuario.NomeUsuario}`,()=>{
+        it(`Registrar usuario ${usuario.NomeUsuario}`,()=>{
             cy.contains('a','Cadastre-se').click();
             cy.get('input[name="first_name"]').type(usuario.first_name);
             cy.get('input[name="last_name"]').type(usuario.last_name);
