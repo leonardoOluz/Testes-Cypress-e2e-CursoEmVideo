@@ -1,6 +1,6 @@
 describe('Validação de cadastro',()=>{
     beforeEach(()=>{
-        cy.visit('https://www.cursoemvideo.com/')
+        cy.visit('/cypress.config.js')
     })
     it('Verificar mensagens de validação de cadastro',()=>{
         cy.contains('a','Cadastre-se').click();

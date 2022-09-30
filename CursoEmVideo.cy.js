@@ -1,6 +1,6 @@
 describe('Verificando itens de abertura da pagina inicial',()=>{
     beforeEach(()=>{
-        cy.visit('https://www.cursoemvideo.com/')
+        cy.visit('/cypress.config.js')
     })
     it('Verificar mensagens de Menu Horizontal',()=>{
         cy.contains('a','Cursos').should('be.visible');

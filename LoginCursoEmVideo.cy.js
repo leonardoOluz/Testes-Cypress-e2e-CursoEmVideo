@@ -1,6 +1,9 @@
 describe('Validação de Login',()=>{
     beforeEach(()=>{
         cy.visit('https://www.cursoemvideo.com/')
+        cy.intercept('POST','https://www.cursoemvideo.com/',{
+            statusCode: 400
+        }).as('stubPost')
     })
     it('Verificando login invalido',()=>{
        cy.login('Leonardo','12345678');
@@ -10,7 +13,8 @@ describe('Validação de Login',()=>{
 
     }) 
     it('Verificando login valido',()=>{
-        cy.login('leonardoluz10@hotmail.com','HBalcasa18@');
+        cy.login(Cypress.env('userName'),Cypress.env('password'));
+        cy.wait('@stubPost')
         cy.contains('a','Meu Painel').should('be.visible');
     }) 
     
